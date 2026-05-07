@@ -6,3 +6,5 @@ pypdf2
 chromadb
 python-dotenv
 langchain-text-splitters
+langchain-google-genai
+
