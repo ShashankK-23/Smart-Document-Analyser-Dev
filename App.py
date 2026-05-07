@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 st.set_page_config(
-    page_title="Smart Document Analyzer by Ashish Biswal",
+    page_title="Smart Document Analyzer",
     page_icon="📄",
     layout="wide"
 )
@@ -24,7 +24,7 @@ if 'graph_state' not in st.session_state:
 
 st.title("📄 Smart Document Analyzer with RAG")
 st.markdown("Upload PDF documents and ask questions using AI-powered retrieval")
-st.markdown("Built with ❤️ by Ashish Biswal")
+st.markdown("Built with ❤️ by C3 Group")
 st.divider()
 
 # Sidebar
