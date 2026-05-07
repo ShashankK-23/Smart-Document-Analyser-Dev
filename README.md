@@ -13,7 +13,8 @@ A powerful AI-powered document analysis tool built with Streamlit and LangChain 
 
 ## 🚀 Demo
 
-<img width="2541" height="1172" alt="image" src="https://github.com/user-attachments/assets/7981608a-1316-44eb-b960-d543853f83bc" />
+<img width="1876" height="912" alt="image" src="https://github.com/user-attachments/assets/458fc67f-97d9-4837-b989-652865868515" />
+
 
 
 
