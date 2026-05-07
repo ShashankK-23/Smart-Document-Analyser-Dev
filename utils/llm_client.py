@@ -11,5 +11,5 @@ def get_gemini_response(prompt):
         model="gemini-1.5-flash",
         google_api_key=os.environ.get("GOOGLE_API_KEY")
     )
-    
-    return response.choices[0].message.content
+    response = llm.invoke(prompt)
+    return response.content
