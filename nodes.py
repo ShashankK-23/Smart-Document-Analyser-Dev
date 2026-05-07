@@ -6,7 +6,7 @@ from typing import Dict, Any
 from utils.pdf_processor import extract_text_from_pdf
 from utils.text_chunker import chunk_text
 from utils.vector_store import create_vector_store, retrieve_relevant_chunks
-from utils.llm_client import get_chatgpt_response
+from utils.llm_client import get_gemini_response
 from utils.prompts import (
     ANALYSIS_PROMPT,
     SUMMARY_PROMPT,
@@ -57,7 +57,7 @@ def analyze_document_node(state: Dict[str, Any]) -> Dict[str, Any]:
     
     # Use LLM for deeper analysis
     analysis_prompt = ANALYSIS_PROMPT.format(text=extracted_text[:3000])
-    analysis_result = get_chatgpt_response(analysis_prompt)
+    analysis_result = get_gemini_response(analysis_prompt)
     analysis["llm_analysis"] = analysis_result
     
     return {
@@ -71,7 +71,7 @@ def summarize_document_node(state: Dict[str, Any]) -> Dict[str, Any]:
     
     # Use first portion of text for summary
     summary_prompt = SUMMARY_PROMPT.format(text=extracted_text[:4000])
-    summary = get_chatgpt_response(summary_prompt)
+    summary = get_gemini_response(summary_prompt)
     
     return {
         **state,
@@ -91,7 +91,7 @@ def qa_node(state: Dict[str, Any]) -> Dict[str, Any]:
     
     # Generate answer using LLM (RAG generation)
     qa_prompt = QA_PROMPT.format(context=context, question=question)
-    answer = get_chatgpt_response(qa_prompt)
+    answer = get_gemini_response(qa_prompt)
     
     return {
         **state,
